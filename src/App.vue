@@ -1,13 +1,18 @@
 <template>
   <div id="app">
     <h1>Fun with Datamuse</h1>
+    <Navigation></Navigation>
     <router-view/>
   </div>
 </template>
 
 <script>
+import Navigation from './views/Navigation'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    'Navigation': Navigation
+  }
 }
 </script>
 

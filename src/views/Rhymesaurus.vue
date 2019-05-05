@@ -1,9 +1,6 @@
 <template>
   <div class="rhymesaurus">
     <h2>Rhymesaurus: The Rhyming Thesaurus</h2>
-    <p>
-      <router-link to="/adjfornoun">Adjective for Noun</router-link>
-    </p>
     <form v-on:submit.prevent="findWords">
       <p>
         Find rhymes for

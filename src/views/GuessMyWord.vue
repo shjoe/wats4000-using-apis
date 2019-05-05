@@ -1,10 +1,10 @@
 <template>
-  <div class="adjfornoun">
-    <h2>Adjective for Noun</h2>
+  <div class="guessmyword">
+    <h2>Guess My Word</h2>
     <form v-on:submit.prevent="findWords">
       <p>
-        Find an Adjective for a given Noun
-        <input type="text" v-model="noun">
+        Don't know how a word is spelt? Enter your best guess and see the results:
+        <input type="text" v-model="guess">
         <button type="submit">Search</button>
       </p>
     </form>
@@ -30,12 +30,12 @@
 <script>
 import axios from "axios";
 export default {
-  name: "AdjForNoun",
+  name: "GuessMyWord",
   data() {
     return {
       results: null,
       errors: [],
-      noun: ""
+      guess: ""
     };
   },
   methods: {
@@ -43,7 +43,7 @@ export default {
       axios
         .get("https://api.datamuse.com/words", {
           params: {
-            rel_jjb: this.noun
+            sl: this.guess
           }
         })
         .then(response => {
@@ -59,7 +59,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.adjfornoun {
+.guessmyword {
   font-size: 1.4rem;
 }
 
